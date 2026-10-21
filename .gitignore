@@ -1,0 +1,26 @@
+target/
+classes/
+checkouts/
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+
+.cpcache/
+.clj-kondo/.cache/
+.lsp/.cache/
+.nrepl-port
+.nrepl-history
+.rebel_readline_history
+
+# Editor
+.idea/
+*.iml
+.vscode/
+.cursor/
+.DS_Store
+
+# Local env
+.env
+.env.local
+*.local

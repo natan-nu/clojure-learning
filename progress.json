@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "started_at": "2026-10-21",
+  "last_session_at": "2026-10-21",
+  "profile": {
+    "display_name": "Natan",
+    "role": "Software Engineer",
+    "squad": "Conversation Platform",
+    "primary_background": "mobile",
+    "fp_exposure": "none",
+    "clojure_exposure": "none",
+    "diplomat_exposure": "none"
+  },
+  "preferences": {
+    "default_language": "pt",
+    "session_length_min": 30
+  },
+  "environment": {
+    "intellij_configured": false,
+    "repl_working": false,
+    "build_tool": null
+  },
+  "current_module": "01-getting-started",
+  "modules_completed": [],
+  "concepts_mastered": [],
+  "concepts_introduced": [],
+  "challenges": {}
+}
