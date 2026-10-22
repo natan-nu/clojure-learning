@@ -44,6 +44,29 @@
         "summary": "Aplicou o idioma de comparador-retorna-booleano-direto desde a primeira tentativa guiada; solução idêntica à oficial."
       }
     },
-    "002": {"status": "available"}
+    "002": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-22",
+      "completed_at": "2026-10-22",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Identificou rápido o idioma str/includes? pro conceito suplementar sem tê-lo visto antes",
+          "Percebeu via REPL que includes? já cobre string vazia, sem checagem redundante",
+          "Debugou o NullPointerException e entendeu a diferença entre nil e false em Clojure"
+        ],
+        "divergences_from_official": [
+          "Oficial usa (not (str/blank? email)) como guarda; usuário usou (boolean (and email ...))",
+          "str/blank? cobre nil, vazio e espaços em branco; o truthy-check de email cru não cobre espaços em branco"
+        ],
+        "idiomatic_improvements": [
+          "Trocar (and email ...) + boolean externo por (and (not (str/blank? email)) ...) — mais abrangente e dispensa o boolean externo"
+        ],
+        "nubank_style_improvements": [
+          "Guard clauses (checar pré-condições como blank? antes da lógica principal) é padrão comum em código de produção para evitar NPE cedo"
+        ],
+        "summary": "Chegou à mesma ideia da solução oficial por um caminho diferente (boolean+truthy em vez de not+blank?); vale guardar str/blank? como ferramenta mais robusta para esse tipo de guarda."
+      }
+    }
   }
 }
