@@ -1,9 +1,13 @@
-(ns validate-and-fetch)
+(ns challenges.005)
 
 (defn validate-and-fetch
-  "TODO: implement this function"
   [user-id]
-  nil)
+  (if (pos? user-id)
+    {:status :success
+     :user {:id user-id
+            :name (str "User " user-id)}}
+    {:status :error
+     :message "Invalid user ID"}))
 
 (defn- tst []
   (assert (= (validate-and-fetch 1) {:status :success, :user {:id 1, :name "User 1"}}) "Valid ID 1 should return success with user data")
@@ -14,7 +18,6 @@
   (assert (= (validate-and-fetch -1) {:status :error, :message "Invalid user ID"}) "Negative ID -1 should return error")
   (let [result (validate-and-fetch 5)] (assert (= (:status result) :success) "Status should be :success for valid ID") (assert (contains? result :user) "Success result should contain :user key") (assert (= (get-in result [:user :id]) 5) "User ID should match input"))
   (let [result (validate-and-fetch -10)] (assert (= (:status result) :error) "Status should be :error for invalid ID") (assert (contains? result :message) "Error result should contain :message key"))
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
