@@ -20,9 +20,9 @@
     "repl_working": true,
     "build_tool": "tools-deps"
   },
-  "current_module": "03-data-and-domain-entities",
-  "modules_completed": ["01-getting-started", "02-writing-functions"],
-  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring"],
+  "current_module": "04-domain-operations",
+  "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities"],
+  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references"],
   "concepts_introduced": [],
   "challenges": {
     "001": {
@@ -67,6 +67,38 @@
         ],
         "summary": "Chegou à mesma ideia da solução oficial por um caminho diferente (boolean+truthy em vez de not+blank?); vale guardar str/blank? como ferramenta mais robusta para esse tipo de guarda."
       }
-    }
+    },
+    "003": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-22",
+      "completed_at": "2026-10-22",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Identificou destructuring :keys como ferramenta certa sem hint",
+          "Refatorou de let para destructuring direto no parâmetro, mais conciso",
+          "Resultado correto nas duas versões"
+        ],
+        "divergences_from_official": [
+          "Oficial usa let com :keys no corpo; usuário também tentou e preferiu destructuring direto no parâmetro — ambas válidas, diferença só de estilo"
+        ],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Função é um adapter clássico (wire<->domain); em diplomat architecture viveria na camada adapters/"
+        ],
+        "summary": "Resolveu de duas formas válidas (let vs destructuring no parâmetro), ambas idiomáticas para esse caso de adapter."
+      }
+    },
+    "004": {"status": "available"},
+    "005": {"status": "available"},
+    "008": {"status": "available"},
+    "009": {"status": "available"},
+    "010": {"status": "available"},
+    "013": {"status": "available"},
+    "014": {"status": "available"},
+    "020": {"status": "available"},
+    "022": {"status": "available"},
+    "029": {"status": "available"},
+    "038": {"status": "available"}
   }
 }

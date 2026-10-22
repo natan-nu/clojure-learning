@@ -1,9 +1,8 @@
-(ns wire->domain)
+(ns challenges.003)
 
 (defn wire->domain
-  "TODO: implement this function"
-  [user-wire]
-  nil)
+  [{:keys [firstName lastName emailAddress]}]
+  {:first-name firstName :last-name lastName :email emailAddress})
 
 (defn- tst []
   (assert (= (wire->domain {:firstName "John", :lastName "Doe", :emailAddress "john@example.com"}) {:first-name "John", :last-name "Doe", :email "john@example.com"}) "Standard user transformation should work")
@@ -12,7 +11,6 @@
   (assert (= (wire->domain {:firstName "A", :lastName "B", :emailAddress "ab@co.uk"}) {:first-name "A", :last-name "B", :email "ab@co.uk"}) "Single letter names should work")
   (assert (= (wire->domain {:firstName "Mary", :lastName "Anne-Smith", :emailAddress "mary@example.org"}) {:first-name "Mary", :last-name "Anne-Smith", :email "mary@example.org"}) "Hyphenated last name should be preserved")
   (assert (= (wire->domain {:firstName "José", :lastName "García", :emailAddress "jose@example.es"}) {:first-name "José", :last-name "García", :email "jose@example.es"}) "International characters should be preserved")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
