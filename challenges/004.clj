@@ -1,9 +1,8 @@
-(ns extract-contact-info)
+(ns challenges.004)
 
 (defn extract-contact-info
-  "TODO: implement this function"
   [user]
-  nil)
+  (select-keys user [:name :email]))
 
 (defn- tst []
   (assert (= (extract-contact-info {:name "John Doe", :email "john@example.com", :age 30, :address "123 Main St", :phone "555-1234"}) {:name "John Doe", :email "john@example.com"}) "Should extract only name and email from full user record")
@@ -12,7 +11,6 @@
   (assert (= (extract-contact-info {:name "Alice", :email "alice@example.com", :age 28, :ssn "123-45-6789", :credit-card "1234-5678-9012-3456"}) {:name "Alice", :email "alice@example.com"}) "Should exclude sensitive fields like SSN and credit card")
   (assert (= (extract-contact-info {:name "Charlie", :age 35}) {:name "Charlie"}) "Should only include keys that exist in input")
   (assert (= (extract-contact-info {:name "", :email "", :age 50}) {:name "", :email ""}) "Should preserve empty string values")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)

@@ -89,7 +89,24 @@
         "summary": "Resolveu de duas formas válidas (let vs destructuring no parâmetro), ambas idiomáticas para esse caso de adapter."
       }
     },
-    "004": {"status": "available"},
+    "004": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-22",
+      "completed_at": "2026-10-22",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Reconheceu o caso de filtro de campos antes do hint",
+          "Aplicou select-keys corretamente após o empurrão, idêntico à oficial"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "select-keys é comum em produção para remover campos sensíveis antes de logar/expor dados externamente"
+        ],
+        "summary": "Pegou o idioma select-keys rápido — ferramenta comum em adapters de subset de dados."
+      }
+    },
     "005": {"status": "available"},
     "008": {"status": "available"},
     "009": {"status": "available"},
