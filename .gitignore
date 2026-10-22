@@ -7,8 +7,8 @@ pom.xml.asc
 *.class
 
 .cpcache/
-.clj-kondo/.cache/
-.lsp/.cache/
+.clj-kondo/
+.lsp/
 .nrepl-port
 .nrepl-history
 .rebel_readline_history
