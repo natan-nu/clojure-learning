@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "started_at": "2026-10-21",
-  "last_session_at": "2026-10-21",
+  "last_session_at": "2026-10-22",
   "profile": {
     "display_name": "Natan",
     "role": "Software Engineer",
@@ -16,13 +16,34 @@
     "session_length_min": 30
   },
   "environment": {
-    "intellij_configured": false,
-    "repl_working": false,
-    "build_tool": null
+    "intellij_configured": true,
+    "repl_working": true,
+    "build_tool": "tools-deps"
   },
-  "current_module": "01-getting-started",
-  "modules_completed": [],
-  "concepts_mastered": [],
+  "current_module": "03-data-and-domain-entities",
+  "modules_completed": ["01-getting-started", "02-writing-functions"],
+  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring"],
   "concepts_introduced": [],
-  "challenges": {}
+  "challenges": {
+    "001": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-22",
+      "completed_at": "2026-10-22",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Chegou direto na forma idiomática `(>= age 18)` sem if redundante",
+          "Entendeu por que comparadores já retornam booleano sozinhos",
+          "Debugou corretamente o erro de namespace ao carregar o arquivo certo"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Predicado puro sem I/O viveria na camada de lógica de domínio (bookending: núcleo puro, I/O nas bordas)"
+        ],
+        "summary": "Aplicou o idioma de comparador-retorna-booleano-direto desde a primeira tentativa guiada; solução idêntica à oficial."
+      }
+    },
+    "002": {"status": "available"}
+  }
 }
