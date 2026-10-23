@@ -135,7 +135,25 @@
     "022": {"status": "available"},
     "029": {"status": "available"},
     "038": {"status": "available"},
-    "015": {"status": "available"},
+    "015": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-23",
+      "completed_at": "2026-10-23",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Acertou a estrutura do cond com as três validações na ordem certa, sem hint na lógica",
+          "Combinou str/blank?, str/includes? e comparação numérica nas condições",
+          "Corrigiu o bug do :user keys lembrando sozinho de :as"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Ordem das validações importa: valide o barato antes do caro, e o que bloqueia o resto primeiro (fail fast)"
+        ],
+        "summary": "Resolveu cond com múltiplas validações de primeira, só precisando de empurrão pontual sobre :as — padrão fail fast que vai se repetir."
+      }
+    },
     "025": {"status": "available"},
     "030": {"status": "available"},
     "035": {"status": "available"},
