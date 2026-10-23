@@ -20,9 +20,9 @@
     "repl_working": true,
     "build_tool": "tools-deps"
   },
-  "current_module": "04-domain-operations",
-  "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities"],
-  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references"],
+  "current_module": "05-list-sequence-processing",
+  "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities", "04-domain-operations"],
+  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references", "constructor-functions", "default-values-multiarity", "calculated-fields", "side-effects-in-constructors", "namespaces", "defn-private", "bang-naming-convention", "variadic-domain-ops", "clojure-spec-basics"],
   "concepts_introduced": [],
   "challenges": {
     "001": {
@@ -134,6 +134,16 @@
     "020": {"status": "available"},
     "022": {"status": "available"},
     "029": {"status": "available"},
-    "038": {"status": "available"}
+    "038": {"status": "available"},
+    "015": {"status": "available"},
+    "025": {"status": "available"},
+    "030": {"status": "available"},
+    "035": {"status": "available"},
+    "037": {"status": "available"},
+    "041": {"status": "available"},
+    "042": {"status": "available"},
+    "061": {"status": "available"},
+    "062": {"status": "available"},
+    "066": {"status": "available"}
   }
 }
