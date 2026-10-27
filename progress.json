@@ -365,7 +365,29 @@
         "summary": "Resolveu de primeira, consolidando o padrão de predicados em coleções."
       }
     },
-    "028": {"status": "available"},
+    "028": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 2,
+      "review": {
+        "strengths": [
+          "Montou 4 funções de uma vez, estruturalmente idêntico à oficial, um dos mais complexos até agora",
+          "camel->kebab com regex saiu certo de primeira",
+          "Debugou sozinho o bug de parênteses faltando assim que localizei onde olhar"
+        ],
+        "divergences_from_official": [
+          "Oficial usa (fn [acc k v] ...) nomeado; usuário usou #(...) com %1/%2/%3 em ambas as reduce-kv"
+        ],
+        "idiomatic_improvements": [
+          "Usar fn nomeado em vez de #(...) para as duas reduce-kv, já que lidam com 3 posições"
+        ],
+        "nubank_style_improvements": [
+          "Transformações bidirecionais devem ser inversas exatas — critério útil para validar pares de adapters domain<->wire"
+        ],
+        "summary": "Resolveu um dos desafios mais complexos do módulo, incluindo regex e composição de 4 funções."
+      }
+    },
     "031": {"status": "available"},
     "032": {"status": "available"},
     "033": {"status": "available"},
