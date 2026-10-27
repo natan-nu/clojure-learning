@@ -287,7 +287,29 @@
         "summary": "Resolveu quase idêntico à oficial sem hints na lógica; só precisou reforço pontual sobre mecânica de merge."
       }
     },
-    "023": {"status": "available"},
+    "023": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 3,
+      "review": {
+        "strengths": [
+          "Entendeu a estratégia reduce-kv + assoc + name de primeira",
+          "Corrigiu dois erros de sintaxe (aridade, parênteses extras) com hints pontuais",
+          "Resultado final equivalente à oficial"
+        ],
+        "divergences_from_official": [
+          "Oficial usa (fn [acc k v] ...) com nomes explícitos; usuário usou #(...) com %1/%2/%3 — menos legível com 3 posicionais"
+        ],
+        "idiomatic_improvements": [
+          "Usar fn nomeado em vez de #(...) quando a lambda tem 3+ argumentos posicionais"
+        ],
+        "nubank_style_improvements": [
+          "Adapter clássico de conversão keyword<->string, comum em integração com sistemas legados/JSON"
+        ],
+        "summary": "Acertou a estratégia com reduce-kv de primeira; erros foram só de sintaxe, corrigidos rápido."
+      }
+    },
     "024": {"status": "available"},
     "026": {
       "status": "completed",
