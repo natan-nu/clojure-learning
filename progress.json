@@ -273,7 +273,24 @@
         "summary": "Resolveu de primeira reaproveitando o padrão de reduce do desafio anterior; bom sinal de que o padrão já está internalizado."
       }
     },
-    "027": {"status": "available"},
+    "027": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial de primeira, sem hints",
+          "Domina o padrão predicado + #(...) desde o início do módulo"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "every? já resolve vacuous truth (coleção vazia -> true) de graça, sem precisar de caso especial"
+        ],
+        "summary": "Resolveu de primeira, consolidando o padrão de predicados em coleções."
+      }
+    },
     "028": {"status": "available"},
     "031": {"status": "available"},
     "032": {"status": "available"},

@@ -1,9 +1,8 @@
-(ns all-adults?)
+(ns challenges.027)
 
 (defn all-adults?
-  "TODO: implement this function"
   [users]
-  nil)
+  (every? #(>= (:age %) 18) users))
 
 (defn- tst []
   (assert (= (all-adults? [{:name "John", :age 25} {:name "Jane", :age 30}]) true))
