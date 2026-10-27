@@ -187,7 +187,29 @@
       }
     },
     "007": {"status": "available"},
-    "011": {"status": "available"},
+    "011": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 3,
+      "review": {
+        "strengths": [
+          "Reconstruiu a lógica de reduce passo a passo com os empurrões (%1/%2, 3 args de reduce)",
+          "Entendeu o papel de cada % após quebrarmos em partes menores",
+          "Resultado final idêntico em lógica à oficial"
+        ],
+        "divergences_from_official": [
+          "Oficial usa (fn [acc user] ...) com nomes explícitos; usuário usou #(...) com %1/%2 — mesma lógica, oficial mais legível para lambdas que crescem"
+        ],
+        "idiomatic_improvements": [
+          "Para reduce/map com lógica mais complexa, (fn [acc x] ...) com nomes descritivos é mais legível que %1/%2/%3"
+        ],
+        "nubank_style_improvements": [
+          "Função pura de agregação, viveria em logic/ por não depender de I/O"
+        ],
+        "summary": "Precisou reconstruir passo a passo o reduce com acumulador; pediu trace detalhado do mecanismo e entendeu bem o papel do valor inicial para coleção vazia."
+      }
+    },
     "012": {"status": "available"},
     "016": {"status": "available"},
     "017": {"status": "available"},
