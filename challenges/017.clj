@@ -1,9 +1,8 @@
-(ns find-oldest)
+(ns challenges.017)
 
 (defn find-oldest
-  "TODO: implement this function"
   [users]
-  nil)
+  (apply max-key :age users))
 
 (defn- tst []
   (assert (= (find-oldest [{:name "John", :age 25} {:name "Jane", :age 30} {:name "Bob", :age 20}]) {:name "Jane", :age 30}) "Should return Jane with age 30")

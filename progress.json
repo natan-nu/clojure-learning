@@ -212,7 +212,25 @@
     },
     "012": {"status": "available"},
     "016": {"status": "available"},
-    "017": {"status": "available"},
+    "017": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Foi direto para apply max-key :age users sem nunca ter visto max-key antes",
+          "Entendeu por que apply é necessário, conectando com o padrão do Módulo 04",
+          "Solução idêntica à oficial"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "max-key/apply é padrão recorrente em agregações de domínio para achar item com maior/menor valor de um campo"
+        ],
+        "summary": "Acertou função nova (max-key) de primeira e conectou o papel do apply com conceito anterior — ótima retenção entre módulos."
+      }
+    },
     "018": {"status": "available"},
     "019": {"status": "available"},
     "021": {"status": "available"},
