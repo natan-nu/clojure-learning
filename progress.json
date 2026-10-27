@@ -398,7 +398,27 @@
     "043": {"status": "available"},
     "044": {"status": "available"},
     "045": {"status": "available"},
-    "046": {"status": "available"},
+    "046": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução de uma linha idêntica em lógica à oficial, sem hint na estratégia",
+          "Entendeu por que some é a ferramenta certa (para no erro, nil quando tudo passa)",
+          "Resolveu desafio Level 10 rapidíssimo"
+        ],
+        "divergences_from_official": [
+          "Só estilo: oficial usa fn nomeado, usuário usou #(% data) — aceitável com 1 argumento posicional"
+        ],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Composição de validadores pequenos e independentes em vez de função monolítica — cada um testável isoladamente"
+        ],
+        "summary": "Resolveu desafio de nível 10 numa linha, sem hints — ótimo domínio do padrão some + validação pura."
+      }
+    },
     "047": {"status": "available"},
     "048": {"status": "available"},
     "049": {"status": "available"},

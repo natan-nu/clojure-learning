@@ -1,25 +1,25 @@
-(ns validate-required-name
+(ns challenges.046
   (:require [clojure.string :as str]))
 
 (defn validate-required-name
-  "TODO: implement this function"
-  [data]
-  nil)
+   [data]
+   (when (str/blank? (:name data))
+     {:error "Name is required"}))
 
 (defn validate-age-limit
-  "TODO: implement this function"
   [data]
-  nil)
+  (when (< (:age data) 18)
+      {:error "Must be 18 or older"}))
 
 (defn validate-email
-  "TODO: implement this function"
   [data]
-  nil)
+  (when-not (str/includes? (:email data) "@")
+      {:error "Invalid email format"}))
 
 (defn compose-validators
-  "TODO: implement this function"
   [validators data]
-  nil)
+    (some #(% data) validators))
+
 
 (defn- tst []
   (assert (nil? (compose-validators [validate-required-name validate-age-limit validate-email] {:name "John", :age 25, :email "john@example.com"})) "Should return nil when all validations pass")
