@@ -310,7 +310,24 @@
         "summary": "Acertou a estratégia com reduce-kv de primeira; erros foram só de sintaxe, corrigidos rápido."
       }
     },
-    "024": {"status": "available"},
+    "024": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 2,
+      "review": {
+        "strengths": [
+          "Chegou à solução correta e mais simples após o ajuste, idêntica à oficial",
+          "Bom ceticismo ao reconsiderar se flatten era a ferramenta certa"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Achatar nem sempre é transformação complexa — às vezes é só extrair o dado que já está no formato certo um nível abaixo"
+        ],
+        "summary": "Bom instinto ao reconsiderar a ferramenta inicial que não combinava com o formato de map."
+      }
+    },
     "026": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",
