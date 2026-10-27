@@ -1,15 +1,13 @@
-(ns valid-email?
+(ns challenges.016
   (:require [clojure.string :as str]))
 
 (defn valid-email?
-  "TODO: implement this function"
   [email]
-  nil)
+  (and (not (str/blank? email)) (str/includes? email "@")))
 
 (defn count-valid-emails
-  "TODO: implement this function"
   [emails]
-  nil)
+  (count (filter valid-email? emails)))
 
 (defn- tst []
   (assert (= (count-valid-emails ["john@example.com" "invalid" "jane@test.com"]) 2) "Should count 2 valid emails out of 3")
@@ -22,7 +20,6 @@
   (assert (= (valid-email? "test@example.com") true) "Helper should validate correct email")
   (assert (= (valid-email? "invalid") false) "Helper should reject email without @")
   (assert (= (valid-email? "") false) "Helper should reject blank email")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
