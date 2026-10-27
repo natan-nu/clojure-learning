@@ -186,7 +186,24 @@
         "summary": "Lógica de filtro certa de cara; vale o hábito de usar filterv quando a spec pede vector."
       }
     },
-    "007": {"status": "available"},
+    "007": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-27",
+      "completed_at": "2026-10-27",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Pegou map + str/upper-case direto, sem hint na transformação",
+          "Aplicou mapv vs map sozinho, generalizando a lição do desafio 006"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "mapv/filterv quando a spec exige vetor é comum em adapters que devolvem tipo exato esperado pelo consumidor"
+        ],
+        "summary": "Generalizou sozinho a lição filterv -> mapv entre desafios diferentes — boa transferência de aprendizado."
+      }
+    },
     "011": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",

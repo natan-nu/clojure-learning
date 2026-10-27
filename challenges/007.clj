@@ -1,10 +1,9 @@
-(ns uppercase-names
+(ns challenges.007
   (:require [clojure.string :as str]))
 
 (defn uppercase-names
-  "TODO: implement this function"
   [names]
-  nil)
+  (mapv str/upper-case names))
 
 (defn- tst []
   (assert (= (uppercase-names ["john" "jane" "bob"]) ["JOHN" "JANE" "BOB"]) "Should convert lowercase names to uppercase")
@@ -16,7 +15,6 @@
   (assert (= (uppercase-names ["user1" "user2" "admin3"]) ["USER1" "USER2" "ADMIN3"]) "Should handle names with numbers")
   (assert (= (uppercase-names ["clojure"]) ["CLOJURE"]) "Should work with single name")
   (assert (= (uppercase-names ["mary anne" "john smith"]) ["MARY ANNE" "JOHN SMITH"]) "Should handle names with spaces")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
