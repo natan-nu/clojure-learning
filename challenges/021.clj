@@ -1,14 +1,18 @@
-(ns age-category)
+(ns challenges.021)
 
 (defn age-category
-  "TODO: implement this function"
   [age]
-  nil)
+  (cond
+    (<= age 12) :child
+    (<= age 17) :teen
+    (<= age 64) :adult
+    :else       :senior))
 
 (defn group-by-age
-  "TODO: implement this function"
   [users]
-  nil)
+  (let [empty-categories {:child [] :teen [] :adult [] :senior []}
+        grouped (group-by #(age-category (:age %1)) users)]
+    (merge empty-categories grouped)))
 
 (defn- tst []
   (let [result (group-by-age [{:name "Alice", :age 10} {:name "Bob", :age 16} {:name "Charlie", :age 30} {:name "Diana", :age 70}])] (assert (= (count (:child result)) 1) "Should have 1 child") (assert (= (count (:teen result)) 1) "Should have 1 teen") (assert (= (count (:adult result)) 1) "Should have 1 adult") (assert (= (count (:senior result)) 1) "Should have 1 senior"))
@@ -24,7 +28,6 @@
   (assert (= (age-category 65) :senior))
   (assert (= (age-category 100) :senior))
   (let [result (group-by-age [{:name "Test", :age 25}])] (assert (contains? result :child)) (assert (contains? result :teen)) (assert (contains? result :adult)) (assert (contains? result :senior)))
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
