@@ -23,7 +23,7 @@
   "current_module": "06-threading-operators",
   "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities", "04-domain-operations", "05-list-sequence-processing"],
   "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references", "constructor-functions", "default-values-multiarity", "calculated-fields", "side-effects-in-constructors", "namespaces", "defn-private", "bang-naming-convention", "variadic-domain-ops", "clojure-spec-basics", "sequence-abstraction", "lists-vectors-sets-maps-as-seq", "every-some-not-any", "filter", "map", "reduce", "laziness", "infinite-sequences", "transducers-intro"],
-  "concepts_introduced": ["regex-literals", "next-vs-rest", "some->>-short-circuit", "threading-preview (->, ->>)", "java-interop-not-first-class", "reduce-over-key-list"],
+  "concepts_introduced": ["regex-literals", "next-vs-rest", "some->>-short-circuit", "threading-preview (->, ->>)", "java-interop-not-first-class", "reduce-over-key-list", "update-keys-vs-reduce-kv"],
   "challenges": {
     "001": {
       "status": "completed",
@@ -307,7 +307,27 @@
         "summary": "Resolveu de duas formas corretas (-> /update e reduce/parse-int nomeado); boa investigação espontânea sobre por que métodos Java estáticos não são valores de primeira classe em Clojure."
       }
     },
-    "019": {"status": "available"},
+    "019": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-28",
+      "completed_at": "2026-10-28",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Nomeou str/replace e update-keys sem precisar dos Tips",
+          "Resolveu snake->kebab-key com -> idêntica à oficial de primeira",
+          "Escolheu update-keys em vez de reduce-kv manual — a opção mais concisa entre as que a própria oficial considera"
+        ],
+        "divergences_from_official": [
+          "Oficial principal usa reduce-kv manual com assoc; usuário usou update-keys direto (alternativa que a oficial menciona como mais concisa nos comentários)"
+        ],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Adapter clássico de convenção de nomenclatura (snake_case<->kebab-case), comum na borda banco de dados/API externa <-> domínio Clojure"
+        ],
+        "summary": "Resolveu com update-keys, a forma mais idiomática em Clojure 1.11+; aprofundou bem em update-keys vs reduce-kv e quando cada um é a ferramenta certa."
+      }
+    },
     "021": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",

@@ -1,15 +1,11 @@
-(ns snake->kebab-key
+(ns challenges.019
   (:require [clojure.string :as str]))
 
-(defn snake->kebab-key
-  "TODO: implement this function"
-  [k]
-  nil)
+(defn snake->kebab-key [k]
+  (-> k name (str/replace "_" "-") keyword))
 
-(defn snake->kebab
-  "TODO: implement this function"
-  [data]
-  nil)
+(defn snake->kebab [data]
+  (update-keys data snake->kebab-key))
 
 (defn- tst []
   (assert (= (snake->kebab {:first_name "John", :last_name "Doe"}) {:first-name "John", :last-name "Doe"}) "Should transform snake_case to kebab-case")
@@ -21,7 +17,6 @@
   (let [result (snake->kebab {:user_id 999, :active_flag true})] (assert (= (:user-id result) 999) "Integer values should be preserved") (assert (= (:active-flag result) true) "Boolean values should be preserved"))
   (assert (= (snake->kebab-key :first_name) :first-name) "Helper should convert single key")
   (assert (= (snake->kebab-key :no_change) :no-change) "Helper should replace underscores")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
