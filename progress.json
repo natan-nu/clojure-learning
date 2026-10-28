@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "started_at": "2026-10-21",
-  "last_session_at": "2026-10-22",
+  "last_session_at": "2026-10-28",
   "profile": {
     "display_name": "Natan",
     "role": "Software Engineer",
@@ -23,7 +23,7 @@
   "current_module": "06-threading-operators",
   "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities", "04-domain-operations", "05-list-sequence-processing"],
   "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references", "constructor-functions", "default-values-multiarity", "calculated-fields", "side-effects-in-constructors", "namespaces", "defn-private", "bang-naming-convention", "variadic-domain-ops", "clojure-spec-basics", "sequence-abstraction", "lists-vectors-sets-maps-as-seq", "every-some-not-any", "filter", "map", "reduce", "laziness", "infinite-sequences", "transducers-intro"],
-  "concepts_introduced": [],
+  "concepts_introduced": ["regex-literals", "next-vs-rest", "some->>-short-circuit", "threading-preview (->, ->>)"],
   "challenges": {
     "001": {
       "status": "completed",
@@ -227,7 +227,27 @@
         "summary": "Precisou reconstruir passo a passo o reduce com acumulador; pediu trace detalhado do mecanismo e entendeu bem o papel do valor inicial para coleção vazia."
       }
     },
-    "012": {"status": "available"},
+    "012": {
+      "status": "completed",
+      "first_attempted_at": "2026-10-28",
+      "completed_at": "2026-10-28",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Identificou str/split e last sozinho, sem precisar dos Tips",
+          "Resolveu corretamente todos os casos extremos (sem @, @ sozinho, @ nas pontas, múltiplos @) de primeira",
+          "Perguntou sobre a sintaxe #\"@\" e entendeu o conceito de regex literal vs char"
+        ],
+        "divergences_from_official": [
+          "Oficial usa let + (if (> (count parts) 1) ...); usuário usou (or (some->> (str/split email #\"@\") next last) \"\") — mesma lógica via propagação de nil em vez de checagem explícita de count"
+        ],
+        "idiomatic_improvements": [],
+        "nubank_style_improvements": [
+          "Função pura string->string, moraria em logic/ numa diplomat architecture real"
+        ],
+        "summary": "Resolveu com abordagem alternativa à oficial (some->> + next) igualmente correta e mais concisa; aprofundou em next vs rest, some->> short-circuit e teve uma prévia de threading (->, ->>) antes do módulo 06."
+      }
+    },
     "016": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",

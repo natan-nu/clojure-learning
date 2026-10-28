@@ -1,10 +1,10 @@
-(ns extract-domain
+(ns challenges.012
   (:require [clojure.string :as str]))
 
 (defn extract-domain
-  "TODO: implement this function"
   [email]
-  nil)
+  (or (some->> (str/split email #"@") next last)
+      ""))
 
 (defn- tst []
   (assert (= (extract-domain "john@example.com") "example.com") "Should extract domain from standard email")
@@ -17,7 +17,6 @@
   (assert (= (extract-domain "user@") "") "Should return empty string when @ at end")
   (assert (= (extract-domain "user@host@example.com") "example.com") "Should take last part when multiple @ present")
   (assert (= (map extract-domain ["john@example.com" "jane@test.org" "bob@company.co.uk"]) (quote ("example.com" "test.org" "company.co.uk"))) "Should work when mapping over collection")
-  "SUCCESS"
-  )
+  "SUCCESS")
 
 (tst)
