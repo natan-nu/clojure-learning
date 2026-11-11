@@ -207,7 +207,25 @@
       }
     },
     "009": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial, com dissoc e as duas chaves de uma vez, sem hints",
+          "Explicou corretamente que dissoc ignora chaves ausentes sem erro e sem alterar o original",
+          "Percebeu sozinho a diferença de segurança entre dissoc (lista do que remover) e select-keys (lista do que manter)"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Se a lista de campos sensíveis crescer, extrair um set/vetor nomeado e usar (apply dissoc user sensitive-keys) ou apply com o set"
+        ],
+        "nubank_style_improvements": [
+          "Adapter de saída: para dados que saem do serviço, preferir allowlist (select-keys / schema de resposta) a denylist, para que campos novos não vazem por padrão"
+        ],
+        "summary": "Resolveu de primeira com dissoc e mostrou bom senso de segurança ao comparar denylist com allowlist."
+      }
     },
     "010": {
       "status": "available"

@@ -1,9 +1,8 @@
-(ns remove-sensitive)
+(ns challenges.009)
 
 (defn remove-sensitive
-  "TODO: implement this function"
   [user]
-  nil)
+  (dissoc user :password :ssn))
 
 (defn- tst []
   (assert (= (remove-sensitive {:name "John", :email "john@example.com", :password "secret123", :ssn "123-45-6789", :age 30}) {:name "John", :email "john@example.com", :age 30}) "Should remove :password and :ssn fields")
