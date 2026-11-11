@@ -1,10 +1,19 @@
-(ns fetch-and-sanitize
+(ns challenges.010
   (:require [clojure.string :as str]))
 
 (defn fetch-and-sanitize
-  "TODO: implement this function"
   [user-id]
-  nil)
+  (if (pos? user-id)
+      (let [
+            fetched-user {:id user-id
+                          :name (str "User " user-id)
+                          :email (str "user" user-id "@example.com")
+                          :password "secret"}
+            sanitized-user (dissoc fetched-user :password)]
+        {:status :success
+         :user sanitized-user})
+      {:status :error
+       :message "Invalid user ID"}))
 
 (defn- tst []
   (assert (= (fetch-and-sanitize 1) {:status :success, :user {:id 1, :name "User 1", :email "user1@example.com"}}) "Valid ID 1 should return success with sanitized user")

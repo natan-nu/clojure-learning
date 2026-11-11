@@ -228,7 +228,25 @@
       }
     },
     "010": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial na estrutura: if de validação, let com etapas nomeadas, dissoc e mapa de resposta",
+          "Explicou que o let só roda no ramo verdadeiro do if (validar antes de processar)",
+          "Aplicou o critério do M06 para justificar por que -> não ajudaria aqui (uma única transformação)"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Extrair a montagem do usuário (fetch simulado) e a sanitização em funções pequenas, para reaproveitar o dissoc do desafio 009"
+        ],
+        "nubank_style_improvements": [
+          "Controller real: o fetch seria I/O em um diplomat (db/http), a sanitização um adapter puro e a validação do ID uma checagem na borda; o contrato :status/:user|:message viraria um schema de resposta"
+        ],
+        "summary": "Resolveu de primeira com a estrutura validar, buscar, sanitizar e responder; o contrato com :status nos dois ramos é o padrão típico de controller."
+      }
     },
     "013": {
       "status": "available"
