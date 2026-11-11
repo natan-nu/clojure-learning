@@ -399,7 +399,25 @@
       }
     },
     "030": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial: or com três when e o mapa de sucesso como último form, de primeira",
+          "Explicou que a ordem das checagens faz parte da regra de negócio (-5 e 2001 mudariam de mensagem se a ordem fosse trocada)",
+          "Identificou o risco de exceção com nil ou valor não numérico em <=, > e odd?"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Extrair cada checagem em função nomeada (invalid-id-error, out-of-range-error, not-found-error) devolvendo erro ou nil, deixando o or mais declarativo e cada regra testável"
+        ],
+        "nubank_style_improvements": [
+          "Controller real: o ID chegaria validado por schema na borda (inteiro), e os erros seriam respostas de erro padronizadas; a regra de 'ímpar não encontrado' viria de uma consulta ao banco (diplomat), não de lógica fixa"
+        ],
+        "summary": "Resolveu de primeira com o mesmo padrão do 025; o ponto principal é que, em cadeias de or, a ordem das checagens define qual erro aparece."
+      }
     },
     "035": {
       "status": "available"

@@ -1,9 +1,20 @@
-(ns fetch-with-fallback)
+(ns challenges.030)
 
 (defn fetch-with-fallback
-  "TODO: implement this function"
   [user-id]
-  nil)
+    (or
+    (when (<= user-id 0)
+      {:status :error :message "Invalid ID"})
+  
+    (when (> user-id 1000)
+      {:status :error :message "ID out of range"})
+  
+    (when (odd? user-id)
+      {:status :error :message "User not found"})
+  
+    {:status :success
+     :user {:id user-id
+            :name (str "User " user-id)}}))
 
 (defn- tst []
   (assert (= (fetch-with-fallback 100) {:status :success, :user {:id 100, :name "User 100"}}))
