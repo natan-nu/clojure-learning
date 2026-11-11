@@ -314,7 +314,25 @@
       }
     },
     "022": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial: get-in com os dois caminhos, de primeira e sem hints",
+          "Previu que caminho ausente devolve nil sem erro, e que keywords aplicadas a nil também devolvem nil",
+          "Propôs sozinho duas alternativas: let com o trecho comum do caminho e destructuring aninhado no parâmetro"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Quando o trecho do caminho se repete, nomear o subcaminho com let (address) ou usar destructuring aninhado evita a duplicação"
+        ],
+        "nubank_style_improvements": [
+          "Função pura de extração de dados externos; em produção o payload da borda (wire) seria validado por schema antes, para saber que o caminho existe em vez de depender de nil silencioso"
+        ],
+        "summary": "Resolveu de primeira e foi além com duas variações válidas; o nil silencioso do get-in é conveniente, mas pede schema na borda."
+      }
     },
     "029": {
       "status": "available"

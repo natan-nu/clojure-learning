@@ -1,9 +1,9 @@
-(ns extract-location)
+(ns challenges.022)
 
 (defn extract-location
-  "TODO: implement this function"
   [profile]
-  nil)
+  {:city (get-in profile [:user :contact :address :city])
+    :zip  (get-in profile [:user :contact :address :zip])})
 
 (defn- tst []
   (assert (= (extract-location {:user {:name "John", :contact {:address {:city "NYC", :zip "10001"}}}}) {:city "NYC", :zip "10001"}))
