@@ -1,9 +1,8 @@
-(ns birthday)
+(ns challenges.013)
 
 (defn birthday
-  "TODO: implement this function"
   [user]
-  nil)
+  (update user :age inc))
 
 (defn- tst []
   (assert (= (birthday {:name "John", :age 25}) {:name "John", :age 26}) "Should increment age by 1")

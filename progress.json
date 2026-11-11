@@ -249,7 +249,25 @@
       }
     },
     "013": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial: (update user :age inc), de primeira e sem hints",
+          "Distinguiu assoc (valor fixo) de update (função sobre o valor atual) e previu o NPE quando :age é nil",
+          "Usou macroexpand para mostrar como o -> reescreve o encadeamento de birthday e por que a função compõe bem (mapa entra, mapa sai)"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "update também aceita argumentos extras (update user :age + 5), útil quando a função precisa de mais de um argumento"
+        ],
+        "nubank_style_improvements": [
+          "Transformação pura mapa->mapa; em produção a idade viria de uma data de nascimento, e o schema da entidade garantiria que :age nunca seja nil"
+        ],
+        "summary": "Resolveu de primeira com update e conectou com o M06: funções mapa->mapa encadeiam naturalmente com ->."
+      }
     },
     "014": {
       "status": "available"
