@@ -1,9 +1,21 @@
-(ns fetch-validate-enrich)
+(ns challenges.020)
 
 (defn fetch-validate-enrich
-  "TODO: implement this function"
   [user-id]
-  nil)
+  (if (pos? user-id)
+    (let [fetched-user {:id user-id
+                        :name (str "User " user-id)
+                        :email (str "user" user-id "@example.com")
+                        :password "secret123"}
+  
+          sanitized-user (dissoc fetched-user :password)
+  
+          enriched-user (assoc sanitized-user
+                               :fetched-at "2024-01-15T10:00:00")]
+   {:status :success
+       :user enriched-user})
+   {:status :error
+     :message "Invalid user ID"}))
 
 (defn- tst []
   (let [result (fetch-validate-enrich 1)] (assert (= (:status result) :success) "Should return success status") (assert (= (get-in result [:user :id]) 1) "Should have correct user ID") (assert (= (get-in result [:user :name]) "User 1") "Should have correct name") (assert (= (get-in result [:user :email]) "user1@example.com") "Should have correct email") (assert (= (get-in result [:user :fetched-at]) "2024-01-15T10:00:00") "Should have timestamp") (assert (nil? (get-in result [:user :password])) "Password should be removed"))

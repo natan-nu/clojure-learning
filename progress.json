@@ -291,7 +291,27 @@
       }
     },
     "020": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução com a mesma estrutura da oficial (if de validação, let com fetch, sanitize e enrich), de primeira",
+          "Rastreou corretamente o valor em cada binding e explicou o fail fast pelo if",
+          "Aplicou o critério do M06 e reescreveu as duas últimas etapas com ->, justificando a escolha com legibilidade e manutenibilidade"
+        ],
+        "divergences_from_official": [
+          "Oficial usa três bindings nomeados (fetched, sanitized, enriched); a versão do usuário com -> junta sanitize e enrich num pipeline, equivalente em resultado"
+        ],
+        "idiomatic_improvements": [
+          "Extrair sanitize e enrich em funções pequenas e compor: (-> (fetch-user id) sanitize enrich), reaproveitando o remove-sensitive do 009"
+        ],
+        "nubank_style_improvements": [
+          "Controller real: o fetch seria I/O em um diplomat e sanitize/enrich adapters puros; o timestamp fixo viraria um valor injetado (relógio como parâmetro) para manter a função testável"
+        ],
+        "summary": "Resolveu de primeira e usou o M06 com bom critério: três etapas sobre o mesmo mapa pedem ->, enquanto uma etapa só (010) não pedia."
+      }
     },
     "022": {
       "status": "available"
