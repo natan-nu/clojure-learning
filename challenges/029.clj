@@ -1,9 +1,8 @@
-(ns increment-age)
+(ns challenges.029)
 
 (defn increment-age
-  "TODO: implement this function"
   [profile]
-  nil)
+    (update-in profile [:user :details :age] inc))
 
 (defn- tst []
   (assert (= (increment-age {:user {:name "John", :details {:age 25}}}) {:user {:name "John", :details {:age 26}}}))

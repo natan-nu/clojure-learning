@@ -335,7 +335,25 @@
       }
     },
     "029": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução com update-in de primeira e sem hints",
+          "Relacionou update-in a update (transformação) e get-in (navegação por caminho)",
+          "Previu que caminho ausente cria mapas intermediários e leva nil ao inc, causando exceção"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Quando o caminho é frágil, proteger com (some-> ...) ou checar com get-in antes, ou usar (fnil inc 0) se um valor padrão fizer sentido"
+        ],
+        "nubank_style_improvements": [
+          "Adapter puro sobre payload aninhado; um schema na borda garantiria que :details/:age existem, evitando a exceção do inc com nil"
+        ],
+        "summary": "Resolveu de primeira e conectou update, get-in e update-in; o ponto de atenção é o caminho ausente virando nil no inc."
+      }
     },
     "038": {
       "status": "available"
