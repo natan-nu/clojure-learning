@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "started_at": "2026-10-21",
-  "last_session_at": "2026-10-28",
+  "last_session_at": "2026-11-11",
   "profile": {
     "display_name": "Natan",
     "role": "Software Engineer",
@@ -20,10 +20,69 @@
     "repl_working": true,
     "build_tool": "tools-deps"
   },
-  "current_module": "06-threading-operators",
-  "modules_completed": ["01-getting-started", "02-writing-functions", "03-data-and-domain-entities", "04-domain-operations", "05-list-sequence-processing"],
-  "concepts_mastered": ["repl-workflow", "basic-syntax", "immutable-data", "pure-functions", "side-effects", "defn", "lambdas-fn", "higher-order-functions", "let-bindings", "multi-arity", "varargs", "sequential-destructuring", "associative-destructuring", "maps-as-entities", "keyword-lookup", "defrecord", "maps-vs-records", "nested-relationships", "identifier-relationships", "stateful-references", "constructor-functions", "default-values-multiarity", "calculated-fields", "side-effects-in-constructors", "namespaces", "defn-private", "bang-naming-convention", "variadic-domain-ops", "clojure-spec-basics", "sequence-abstraction", "lists-vectors-sets-maps-as-seq", "every-some-not-any", "filter", "map", "reduce", "laziness", "infinite-sequences", "transducers-intro"],
-  "concepts_introduced": ["regex-literals", "next-vs-rest", "some->>-short-circuit", "threading-preview (->, ->>)", "java-interop-not-first-class", "reduce-over-key-list", "update-keys-vs-reduce-kv"],
+  "current_module": "07-atoms-refs",
+  "modules_completed": [
+    "01-getting-started",
+    "02-writing-functions",
+    "03-data-and-domain-entities",
+    "04-domain-operations",
+    "05-list-sequence-processing",
+    "06-threading-operators"
+  ],
+  "concepts_mastered": [
+    "repl-workflow",
+    "basic-syntax",
+    "immutable-data",
+    "pure-functions",
+    "side-effects",
+    "defn",
+    "lambdas-fn",
+    "higher-order-functions",
+    "let-bindings",
+    "multi-arity",
+    "varargs",
+    "sequential-destructuring",
+    "associative-destructuring",
+    "maps-as-entities",
+    "keyword-lookup",
+    "defrecord",
+    "maps-vs-records",
+    "nested-relationships",
+    "identifier-relationships",
+    "stateful-references",
+    "constructor-functions",
+    "default-values-multiarity",
+    "calculated-fields",
+    "side-effects-in-constructors",
+    "namespaces",
+    "defn-private",
+    "bang-naming-convention",
+    "variadic-domain-ops",
+    "clojure-spec-basics",
+    "sequence-abstraction",
+    "lists-vectors-sets-maps-as-seq",
+    "every-some-not-any",
+    "filter",
+    "map",
+    "reduce",
+    "laziness",
+    "infinite-sequences",
+    "transducers-intro",
+    "threading-first-last",
+    "some->-nil-short-circuit",
+    "cond->-conditional-steps",
+    "as->-named-position",
+    "when-to-use-threading",
+    "macroexpand"
+  ],
+  "concepts_introduced": [
+    "regex-literals",
+    "next-vs-rest",
+    "java-interop-not-first-class",
+    "reduce-over-key-list",
+    "update-keys-vs-reduce-kv",
+    "some->>-short-circuit"
+  ],
   "challenges": {
     "001": {
       "status": "completed",
@@ -126,15 +185,51 @@
         "summary": "Já automatizou o padrão if-validação-sucesso/erro sem ajuda — bom sinal para cond no Módulo 04."
       }
     },
-    "008": {"status": "available"},
-    "009": {"status": "available"},
-    "010": {"status": "available"},
-    "013": {"status": "available"},
-    "014": {"status": "available"},
-    "020": {"status": "available"},
-    "022": {"status": "available"},
-    "029": {"status": "available"},
-    "038": {"status": "available"},
+    "008": {
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial, escrita direto e sem hints",
+          "Explicou corretamente que assoc substitui o valor de uma chave existente (caso :status :inactive)",
+          "Justificou bem por que -> não agrega clareza numa chamada única, aplicando o critério de legibilidade do M06"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "assoc aceita vários pares k/v de uma vez, útil quando o adapter enriquecer mais de um campo"
+        ],
+        "nubank_style_improvements": [
+          "Adapter puro de enriquecimento; em produção, o valor :active seria parte de um enum/schema de status (Plumatic Schema) em vez de keyword solta"
+        ],
+        "summary": "Resolveu de primeira com assoc e mostrou domínio de imutabilidade e do critério de quando usar threading."
+      }
+    },
+    "009": {
+      "status": "available"
+    },
+    "010": {
+      "status": "available"
+    },
+    "013": {
+      "status": "available"
+    },
+    "014": {
+      "status": "available"
+    },
+    "020": {
+      "status": "available"
+    },
+    "022": {
+      "status": "available"
+    },
+    "029": {
+      "status": "available"
+    },
+    "038": {
+      "status": "available"
+    },
     "015": {
       "status": "completed",
       "first_attempted_at": "2026-10-23",
@@ -154,15 +249,33 @@
         "summary": "Resolveu cond com múltiplas validações de primeira, só precisando de empurrão pontual sobre :as — padrão fail fast que vai se repetir."
       }
     },
-    "025": {"status": "available"},
-    "030": {"status": "available"},
-    "035": {"status": "available"},
-    "037": {"status": "available"},
-    "041": {"status": "available"},
-    "042": {"status": "available"},
-    "061": {"status": "available"},
-    "062": {"status": "available"},
-    "066": {"status": "available"},
+    "025": {
+      "status": "available"
+    },
+    "030": {
+      "status": "available"
+    },
+    "035": {
+      "status": "available"
+    },
+    "037": {
+      "status": "available"
+    },
+    "041": {
+      "status": "available"
+    },
+    "042": {
+      "status": "available"
+    },
+    "061": {
+      "status": "available"
+    },
+    "062": {
+      "status": "available"
+    },
+    "066": {
+      "status": "available"
+    },
     "006": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",
@@ -448,16 +561,36 @@
         "summary": "Resolveu um dos desafios mais complexos do módulo, incluindo regex e composição de 4 funções."
       }
     },
-    "031": {"status": "available"},
-    "032": {"status": "available"},
-    "033": {"status": "available"},
-    "034": {"status": "available"},
-    "036": {"status": "available"},
-    "039": {"status": "available"},
-    "040": {"status": "available"},
-    "043": {"status": "available"},
-    "044": {"status": "available"},
-    "045": {"status": "available"},
+    "031": {
+      "status": "available"
+    },
+    "032": {
+      "status": "available"
+    },
+    "033": {
+      "status": "available"
+    },
+    "034": {
+      "status": "available"
+    },
+    "036": {
+      "status": "available"
+    },
+    "039": {
+      "status": "available"
+    },
+    "040": {
+      "status": "available"
+    },
+    "043": {
+      "status": "available"
+    },
+    "044": {
+      "status": "available"
+    },
+    "045": {
+      "status": "available"
+    },
     "046": {
       "status": "completed",
       "first_attempted_at": "2026-10-27",
@@ -479,17 +612,107 @@
         "summary": "Resolveu desafio de nível 10 numa linha, sem hints — ótimo domínio do padrão some + validação pura."
       }
     },
-    "047": {"status": "available"},
-    "048": {"status": "available"},
-    "049": {"status": "available"},
-    "050": {"status": "available"},
-    "052": {"status": "available"},
-    "053": {"status": "available"},
-    "054": {"status": "available"},
-    "057": {"status": "available"},
-    "058": {"status": "available"},
-    "059": {"status": "available"},
-    "063": {"status": "available"},
-    "064": {"status": "available"}
+    "047": {
+      "status": "available"
+    },
+    "048": {
+      "status": "available"
+    },
+    "049": {
+      "status": "available"
+    },
+    "050": {
+      "status": "available"
+    },
+    "052": {
+      "status": "available"
+    },
+    "053": {
+      "status": "available"
+    },
+    "054": {
+      "status": "available"
+    },
+    "057": {
+      "status": "available"
+    },
+    "058": {
+      "status": "available"
+    },
+    "059": {
+      "status": "available"
+    },
+    "063": {
+      "status": "available"
+    },
+    "064": {
+      "status": "available"
+    },
+    "051": {
+      "status": "available"
+    },
+    "055": {
+      "status": "available"
+    },
+    "056": {
+      "status": "available"
+    },
+    "060": {
+      "status": "available"
+    },
+    "065": {
+      "status": "available"
+    },
+    "067": {
+      "status": "available"
+    },
+    "068": {
+      "status": "available"
+    },
+    "069": {
+      "status": "available"
+    },
+    "070": {
+      "status": "available"
+    },
+    "071": {
+      "status": "available"
+    },
+    "072": {
+      "status": "available"
+    },
+    "073": {
+      "status": "available"
+    },
+    "074": {
+      "status": "available"
+    },
+    "075": {
+      "status": "available"
+    },
+    "076": {
+      "status": "available"
+    },
+    "077": {
+      "status": "available"
+    },
+    "078": {
+      "status": "available"
+    },
+    "079": {
+      "status": "available"
+    },
+    "080": {
+      "status": "available"
+    },
+    "082": {
+      "status": "available"
+    },
+    "084": {
+      "status": "available"
+    },
+    "085": {
+      "status": "available"
+    }
   }
 }
