@@ -1,5 +1,4 @@
-(ns challenges.010
-  (:require [clojure.string :as str]))
+(ns challenges.010)
 
 (defn fetch-and-sanitize
   [user-id]

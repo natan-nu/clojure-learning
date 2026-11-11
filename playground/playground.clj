@@ -1,6 +1,6 @@
 (ns playground
   (:require
-   [clojure.string :as s]))
+   [clojure.string :as str]))
 
 (defn hello-world
   "Com um valor em String no parâmetro 'name', imprime
@@ -18,7 +18,7 @@
 (defn hello-world
   "Varargs — uma função que aceita qualquer número de argumentos, usando &:"
   [& names]
-  (s/join " " (cons "Hello" names)))
+  (str/join " " (cons "Hello" names)))
 
 (defn hello-world
   "O & names dos varargs, que vincula todos os argumentos restantes numa sequência. Mas dá pra ser mais seletivo. Veja:"
@@ -42,13 +42,45 @@
   (let [strings (remove nil? ["Hello" first-name middle-name last-name])]
     (clojure.string/join " " strings)))
 
+(def my-vector ["a" :a "eh" 1])
+(def numbers [1 2 3 4 5 6 7 8 9 10])
+
 (comment
+  (str/split "invalid-email" #"@")
+  (get my-vector 0)   ;; => "a"
+  (my-vector 32)   ;; => "a"
+
+  (reduce + 10 numbers)
+
+  (reduce #(str %1 ", " %2) '(:apples :oranges :pears))
+
   (map #(str "Hello " %1) ["Inez" "Maria" "Fred" "Joao"])
   (let [greeting "Hello"
         separator " " name "Natan"]
     (str greeting separator name))
 
-;;   (hello-world "Ted")
-;;   (hello-world "Ted" "Nugent")
-;;   (hello-world [:first-name "Clair" :middle-name "de" :last-name "Lune"]))
-  (hello-world []))
+  ;;   (hello-world "Ted")
+  ;;   (hello-world "Ted" "Nugent")
+  ;;   (hello-world [:first-name "Clair" :middle-name "de" :last-name "Lune"]))
+  (hello-world [])
+
+  (def numbers [1 2 3 4 5 6 7 8 9 10])
+  (->> numbers
+       (filter odd?)
+       (map #(* % %))
+       (clojure.string/join ", "))
+  (numbers))
+
+(comment
+  (some->> [1]
+           next
+           last)
+  (some->> (str/split "invalid-email" #"@") next last))
+
+
+
+(defn hire [employee]
+  (-> employee
+      (assoc :email (str (:first-name employee) "@nubank.com.br"))
+      (update :employment-history conj "Nubank")
+      (assoc :hired-at (java.util.Date.))))
