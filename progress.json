@@ -270,7 +270,25 @@
       }
     },
     "014": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial: let com :keys, assoc e str, de primeira e sem hints",
+          "Distinguiu clojure.core/str de clojure.string e sabe que o primeiro não precisa de require",
+          "Escreveu sozinho a versão com destructuring no parâmetro e :as, e previu o comportamento com :last-name ausente (str trata nil como vazio)"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Para evitar espaço sobrando quando falta um nome, usar (str/join \" \" (remove nil? [first-name last-name])) ou (str/trim ...)"
+        ],
+        "nubank_style_improvements": [
+          "Campo derivado em adapter puro; em produção o schema da entidade tornaria :first-name e :last-name obrigatórios, evitando :full-name com nil implícito"
+        ],
+        "summary": "Resolveu de primeira e foi além: mostrou a versão com :as e o comportamento do str com nil, que é a armadilha típica desse padrão."
+      }
     },
     "020": {
       "status": "available"

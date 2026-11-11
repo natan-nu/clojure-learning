@@ -1,9 +1,9 @@
-(ns add-full-name)
+(ns challenges.014)
 
 (defn add-full-name
-  "TODO: implement this function"
   [user]
-  nil)
+  (let [{:keys [first-name last-name]} user]
+     (assoc user :full-name (str first-name " " last-name))))
 
 (defn- tst []
   (assert (= (add-full-name {:first-name "John", :last-name "Doe"}) {:first-name "John", :last-name "Doe", :full-name "John Doe"}) "Should add full name from first and last name")
