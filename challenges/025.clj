@@ -1,10 +1,20 @@
-(ns validate-user-multi
+(ns challenges.025
   (:require [clojure.string :as str]))
 
 (defn validate-user-multi
-  "TODO: implement this function"
   [user]
-  nil)
+    (let [{:keys [name email age]} user]
+     (or
+      (when (str/blank? name)
+        {:status :error :message "Name is required"})
+  
+      (when-not (str/includes? email "@")
+        {:status :error :message "Invalid email"})
+  
+      (when (or (< age 18) (> age 120))
+        {:status :error :message "Invalid age range"})
+  
+      {:status :success :user user})))
 
 (defn- tst []
   (assert (= (validate-user-multi {:name "John", :email "john@test.com", :age 25}) {:status :success, :user {:name "John", :email "john@test.com", :age 25}}))

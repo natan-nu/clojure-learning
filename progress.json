@@ -360,7 +360,25 @@
       }
     },
     "025": {
-      "status": "available"
+      "status": "completed",
+      "first_attempted_at": "2026-11-11",
+      "completed_at": "2026-11-11",
+      "attempts": 1,
+      "review": {
+        "strengths": [
+          "Solução idêntica à oficial: or com when/when-not devolvendo erro ou nil e o sucesso como último form, de primeira",
+          "Explicou o curto-circuito do or e por que só a primeira mensagem de erro aparece",
+          "Percebeu que o name do destructuring sombreia clojure.core/name e que sem :email o includes? lança exceção em vez de devolver erro"
+        ],
+        "divergences_from_official": [],
+        "idiomatic_improvements": [
+          "Evitar sombrear clojure.core/name: destruturar como {:keys [email age] :as user} e usar (:name user), ou renomear para user-name"
+        ],
+        "nubank_style_improvements": [
+          "Validação de entrada na borda: um schema (Plumatic Schema) garantiria que :email e :age existem e têm o tipo certo, trocando a exceção por uma resposta de erro; checagens poderiam virar funções nomeadas (name-error, email-error, age-error) testáveis isoladamente, como no 046"
+        ],
+        "summary": "Resolveu de primeira e mapeou os pontos frágeis (name sombreado, email nil); o próximo passo é transformar cada checagem em função pequena e deixar o schema cuidar de campos ausentes."
+      }
     },
     "030": {
       "status": "available"
